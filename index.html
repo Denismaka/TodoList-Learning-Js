@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TodoList - Gestionnaire de tâches moderne</title>
+        <link rel="stylesheet" href="dist/output.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://unpkg.com/heroicons@2.0.18/24/outline/esm/index.js"></script>
+        <script src="app.js" type="module" defer></script>
+        <style>
+            .hide-completed .is-completed,
+            .hide-todo .todo:not(.is-completed) {
+                display: none !important;
+            }
+            .todo.is-completed .todo-text {
+                text-decoration: line-through;
+                color: #9ca3af;
+            }
+            .todo.is-completed .todo-checkbox {
+                background-color: #34d399;
+                border-color: #34d399;
+            }
+            .filter-button.active {
+                background-color: #f97316;
+                color: white;
+                box-shadow: 0 0 0 4px #f9731633;
+            }
+            .todo-item {
+                transition: all 0.3s ease-in-out;
+                backdrop-filter: blur(10px);
+            }
+            .todo-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 32px 0 rgba(249, 115, 22, 0.18);
+            }
+            .glass-effect {
+                backdrop-filter: blur(10px);
+                background: rgba(255, 255, 255, 0.7);
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 640px) {
+                .mobile-stack {
+                    flex-direction: column;
+                }
+                .mobile-full {
+                    width: 100%;
+                }
+                .mobile-text-center {
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+
+    <body class="bg-gradient-radial min-h-screen font-sans">
+        <div
+            class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 max-w-2xl"
+        >
+            <div
+                class="glass-effect rounded-2xl sm:rounded-3xl shadow-glass p-4 sm:p-6 lg:p-8 border border-white/20"
+            >
+                <header class="text-center mb-6 sm:mb-8">
+                    <h1
+                        class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent mb-2 sm:mb-3"
+                    >
+                        TodoList
+                    </h1>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        Organisez vos tâches avec style
+                    </p>
+                </header>
+
+                <section id="todolist">
+                    <!-- Le contenu sera injecté par JavaScript -->
+                </section>
+            </div>
+        </div>
+    </body>
+</html>
