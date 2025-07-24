@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.hide-completed .is-completed,
+.hide-todo .todo:not(.is-completed) {
+    display: none !important;
+}
+
+.todo.is-completed .todo-text {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.todo.is-completed .todo-checkbox {
+    background-color: #34d399;
+    border-color: #34d399;
+}
+
+.filter-button.active {
+    background-color: #f97316;
+    color: white;
+    box-shadow: 0 0 0 4px #f9731633;
+}
+
+.todo-item {
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px 0 rgba(249, 115, 22, 0.18);
+}
+
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .mobile-stack {
+        flex-direction: column;
+    }
+    .mobile-full {
+        width: 100%;
+    }
+    .mobile-text-center {
+        text-align: center;
+    }
+} 
